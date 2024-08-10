@@ -1,0 +1,8 @@
+@import "./Variables.scss";
+
+@mixin flexbox($direction, $jc-position, $ai-position) {
+  display: flex;
+  justify-content: $jc-position;
+  align-items: $ai-position;
+  flex-direction: $direction;
+}

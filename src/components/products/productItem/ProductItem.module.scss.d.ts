@@ -1,0 +1,9 @@
+export declare const actionItem: string;
+export declare const addActionContainer: string;
+export declare const descriptionContainer: string;
+export declare const image: string;
+export declare const imageContainer: string;
+export declare const main: string;
+export declare const priceContainer: string;
+export declare const productActionContainer: string;
+export declare const tagContainer: string;

@@ -1,0 +1,168 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixin.scss";
+
+.main {
+  height: 670px;
+  background-color: $background-orange;
+  margin-top: 44px;
+  @include flexbox(row, start, start);
+
+  .titleContainer {
+    width: 35%;
+    height: inherit;
+    padding-left: 100px;
+    background-color: $background-orange;
+
+    @include flexbox(column, center, start);
+    row-gap: 24px;
+    z-index: 3;
+
+    & > h1 {
+      font-size: 40px;
+    }
+
+    & > p {
+      font-size: 16px;
+    }
+
+    & > button {
+      width: 176px;
+      height: 48px;
+      background-color: $accent-orange;
+      font-size: 1em;
+      color: $white;
+      border: 2px solid $accent-orange;
+      transition: all 300ms;
+
+      &:hover {
+        background-color: $white;
+        color: $accent-orange;
+      }
+    }
+  }
+
+  .sliderContainer {
+    width: 70%;
+    height: 100%;
+    padding: 44px 0 0 100px;
+
+    transition: all 300ms;
+
+    .slider {
+      height: 100%;
+    }
+
+    .imageContainer {
+      position: relative;
+      width: 372px;
+      height: 600px;
+      padding: 10px;
+
+      .descriptionContainer {
+        position: absolute;
+        height: 130px;
+        width: 265px;
+        bottom: 50px;
+        left: 50px;
+        transition: all 300ms;
+        @include flexbox(row,start,end);
+
+        .description {
+          background-color: #ffffffdd;
+          width: 217px;
+          height: inherit;
+          padding: 32px;
+          @include flexbox(column, space-between,start);
+
+          &>h3{
+            font-weight: 300;
+            font-size: 1.2em;
+          }
+
+          &>h2{
+            font-weight: 500;
+            font-size: 1.5em;
+          }
+        }
+
+        .link{
+          height: 48px;
+          width: 48px;
+          background-color: $accent-orange;
+        }
+      }
+
+      & > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .active {
+    & > img {
+      scale: 1.1gj;
+    }
+  }
+}
+
+//Arrow
+
+.arrow {
+  position: absolute;
+
+  top: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0px 0px 14px #0000003a;
+  z-index: 3;
+  @include flexbox(row, center, center);
+  cursor: pointer;
+}
+
+.prevArrow {
+  left: -30px;
+}
+
+.nextArrow {
+  right: 30px;
+  transform: rotate(180deg);
+}
+
+
+
+//dots
+
+//dots
+.button__bar {
+  position: absolute;
+  bottom: 5px;
+  left: 55%;
+}
+.button__bar li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 6px;
+  padding: 0;
+}
+
+.button__bar li button {
+  border: none;
+  background: $grey;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 10px;
+  width: 10px;
+  border-radius: 15px;
+  transition: background-color 0.3s ease-in;
+}
+
+.button__bar :global(li.slick-active) button {
+  background-color: $accent-orange;
+}

@@ -1,0 +1,121 @@
+@import "../../../styles/Mixin.scss";
+@import "../../../styles/Variables.scss";
+
+.main {
+  width: 285px;
+  height: 446px;
+  position: relative;
+
+  .imageContainer {
+    width: 100%;
+    height: 65%;
+
+    .image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .descriptionContainer {
+    width: 100%;
+    height: 35%;
+    background-color: $background-grey;
+    padding: 16px 0 0 16px;
+    @include flexbox(column, start, start);
+    row-gap: 12px;
+
+    & > p {
+      color: $text-grey;
+    }
+
+    .priceContainer {
+      @include flexbox(row, start, start);
+      column-gap: 15px;
+
+      & > p {
+        color: #b0b0b0;
+        text-decoration: line-through;
+      }
+    }
+  }
+
+  .productActionContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2b2b2b8f; // Background color of the hover state
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @include flexbox(column, center, center);
+    padding: 20px;
+
+    & > button {
+      width: 202px;
+      height: 48px;
+      background-color: $white;
+
+      & > p {
+        color: $accent-orange;
+      }
+    }
+
+    .addActionContainer {
+      width: 202px;
+      @include flexbox(row, space-between, center);
+      column-gap: 48px;
+      padding: 13px;
+
+      .actionItem {
+        @include flexbox(row, start, center);
+        column-gap: 5px;
+
+        & > p {
+          color: $white;
+        }
+
+        & > svg > path {
+          stroke: $white;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .productActionContainer {
+      opacity: 1; // Show the info box on hover
+    }
+
+    .tagContainer {
+      opacity: 0;
+    }
+  }
+
+  .tagContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    opacity: 1;
+    transition: 0.3s ease;
+    background-color: $red;
+
+    @include flexbox(column, center, center);
+
+
+    &.new {
+        background-color: $green;
+    }
+
+    & > h3 {
+      font-size: 1em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@import "../../styles/Variables.scss";
+@import "../../styles/Mixin.scss";
+
+.main {
+  width: 100%;
+  height: 367px;
+  margin-top: 87px;
+  margin-top: 87px;
+  padding: 0 100px;
+
+  .divider {
+    width: 100%;
+    background-color: $grey;
+    height: 1px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr;
+    column-gap: 70px;
+    height: 100%;
+    padding-top: 80px;
+  }
+
+  .info {
+    grid-area: 1 / 1 / 2 / 3;
+    @include flexbox(column, start, start);
+    row-gap: 16px;
+    & > h1 {
+      color: $black;
+    }
+    p {
+      color: $text-grey;
+    }
+
+    .addInfoContainer {
+      @include flexbox(row, start, start);
+      column-gap: 10px;
+    }
+  }
+
+  .menuContainer {
+    grid-area: 1 / 3 / 2 / 7;
+    @include flexbox(row, center, start);
+    column-gap: 80px;
+
+    & > div {
+      @include flexbox(column, start, start);
+      row-gap: 16px;
+
+      &>p{
+        transition: all 300ms;
+        cursor: pointer;
+
+        &:hover{
+          color: $accent-orange;
+        }
+      }
+    }
+  }
+
+  .emailContainer {
+    grid-area: 1 / 7 / 2 / 9;
+
+    &>h2{
+        padding-bottom: 16px
+    }
+
+    .subscriptionContainer{
+        @include flexbox(row,start,start);
+        column-gap: 2px;
+        height: 45px;
+
+        &>input{
+            height: 100%;
+            width: 80%;
+            background-color: $background-grey;
+            padding: 10px;
+        }
+
+        &>button{
+            width: 45px;
+            height: 100%;
+            background-color: $accent-orange;
+            border: 1px solid $accent-orange; 
+            transition: all 300ms;
+
+            &:hover{
+              background-color: $white;
+              path{
+                stroke: $accent-orange;
+              }
+            }
+        }
+    }
+  }
+}

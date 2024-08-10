@@ -1,0 +1,29 @@
+@import "../../styles/Mixin.scss";
+
+.main {
+  margin: 90px 100px;
+  height: 85px;
+
+  @include flexbox(row, center,center);
+  column-gap: 92px;
+  
+  .articleContianer{
+    height:100%;
+    @include flexbox(row,start,start);
+    padding: 22px 0 22px 22px;
+
+    .textContainer{
+        @include flexbox(column, space-between,start);
+        padding-left: 24px;
+        height: 100%;
+
+        &>h3{
+            font-size: 1em;
+        }
+        &>p{
+            font-size: 0.8em;
+        }
+    }
+    
+  }
+}

@@ -1,0 +1,29 @@
+.main {
+  margin: 20px;
+  width: 391px;
+  height: 370px;
+  padding: 15px;
+
+  & > img {
+    height: 67%;
+    width: 100%;
+  }
+
+  .description {
+    height: 33%;
+    padding: 16px 0 016px;
+
+    & > h2 {
+      font-weight: 500;
+    }
+
+    & > p {
+      padding-top: 10px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px #23232314;
+  }
+}
